@@ -20,6 +20,9 @@ def main_menu():
             print()
             print('Would you like to go back to the menu?')
             print()
+            print('1. Yes')
+            print('2. NO')
+            print()
             menu_choice = get_choice(2)
             match menu_choice:
                 case 1:
@@ -67,9 +70,9 @@ def main_menu():
 
     
 pin_file = Path('pin.txt')
-
+stored_pin = pin_file.read_text()
 def check_pin(guess):
-    if guess == pin_file.read_text():
+    if guess == stored_pin:
         return True
     else:
         return False
