@@ -13,31 +13,36 @@ print(f'      Password Checkah')
 print(f'++++++++++++++++++++++++++++++')
 print(f'==============================')
 
-count = 0
-start = time.perf_counter()
-for length in range(1, 6):
-    for number in product(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation, repeat=length):
-        count += 1
-        guess = ''.join(number)
-        if check_pin(guess):
-            print()
-            print('*****')
-            print(guess)
-            print('*****')
-            print('Password Found')
-            print()
-            end = time.perf_counter()
-            break
+
+
+
+def checker():
+    count = 0
+    start = time.perf_counter()
+    for length in range(1, 6):
+        for number in product(string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation, repeat=length):
+            count += 1
+            guess = ''.join(number)
+            if check_pin(guess):
+                print()
+                print('*****')
+                print(guess)
+                print('*****')
+                print('Password Found')
+                print()
+                end = time.perf_counter()
+                elapsed = end - start
+                print()
+                print(f'Time : {round(elapsed, 2)}')
+                print() 
+                print(f'Guesses: {count:,}')
+                print()
+                guess_per_sec =  count / elapsed
+                print(f'Guesses per second: {guess_per_sec:,.2f}')    
+                print()
+                return 
+checker()
     
 
-elapsed = end - start
-print()
-print(f'Time : {round(elapsed, 2)}')
-print() 
-print(f'Guesses: {count:,}')
-print()
-guess_per_sec =  count / elapsed
-print(f'Guesses per second: {guess_per_sec:,.2f}')    
-print()
 
 
