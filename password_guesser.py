@@ -6,14 +6,6 @@ from itertools import product
 import time
 import string
 
-#print(f'{1:<10} 94           {"< 1sec":>10}')
-#print(f'{2:<10} 8,836        {"< 1sec":>10}')
-#print(f'{3:<10} 830,584      {"< 1sec":>10}')
-#print(f'{4:<10} 78,074,896   {"~ 4sec":>10}')
-#print(f'{5:<10} 7,339,040,224 {"~ 7mins":>10}')
-#print(f'____________________________________')
-      
-
 
 character_set = string.ascii_lowercase + string.ascii_uppercase + string.digits + string.punctuation
 benchmark = 18000000
